@@ -1,0 +1,290 @@
+{
+  "nota": "Día 1 es un lunes. Cada comida puede ser: una receta ('receta'), con 'porciones' si se cocina de más; las sobras del día anterior ('sobra_de'); o una porción guardada en el freezer ('del_freezer'). El postre por defecto es fruta de estación.",
+  "dia_inicio": "lunes",
+  "dias": [
+    {
+      "dia": 1,
+      "almuerzo": {
+        "receta": "fideos-bolognesa-lentejas"
+      },
+      "cena": {
+        "receta": "merluza-criolla"
+      }
+    },
+    {
+      "dia": 2,
+      "almuerzo": {
+        "receta": "ensalada-porotos-choclo"
+      },
+      "cena": {
+        "receta": "hamburguesas-caseras"
+      }
+    },
+    {
+      "dia": 3,
+      "almuerzo": {
+        "receta": "wok-pollo-arroz"
+      },
+      "cena": {
+        "receta": "crema-calabaza-garbanzos"
+      },
+      "nota_batch": "🍚 Cocinar arroz de más hoy"
+    },
+    {
+      "dia": 4,
+      "almuerzo": {
+        "receta": "arroz-salteado-huevo"
+      },
+      "cena": {
+        "receta": "chili-carne-porotos",
+        "porciones": 8
+      }
+    },
+    {
+      "dia": 5,
+      "almuerzo": {
+        "sobra_de": "chili-carne-porotos"
+      },
+      "cena": {
+        "receta": "pizza-pan-arabe"
+      }
+    },
+    {
+      "dia": 6,
+      "almuerzo": {
+        "receta": "pollo-horno-batatas"
+      },
+      "cena": {
+        "receta": "tortilla-papa-espinaca"
+      },
+      "nota_batch": "🍗 Cocinar base de pollo hoy (900 g crudos)"
+    },
+    {
+      "dia": 7,
+      "almuerzo": {
+        "receta": "albondigas-salsa",
+        "porciones": 8
+      },
+      "cena": {
+        "receta": "minestrone-porotos"
+      },
+      "postre_cena": "manzanas-asadas"
+    },
+    {
+      "dia": 8,
+      "almuerzo": {
+        "receta": "quesadillas-pollo-choclo"
+      },
+      "cena": {
+        "receta": "merluza-crocante-horno"
+      }
+    },
+    {
+      "dia": 9,
+      "almuerzo": {
+        "receta": "fideos-pollo-brocoli"
+      },
+      "cena": {
+        "receta": "wraps-hummus"
+      }
+    },
+    {
+      "dia": 10,
+      "almuerzo": {
+        "receta": "huevos-salsa-criolla"
+      },
+      "cena": {
+        "receta": "cerdo-agridulce",
+        "porciones": 8
+      }
+    },
+    {
+      "dia": 11,
+      "almuerzo": {
+        "sobra_de": "cerdo-agridulce"
+      },
+      "cena": {
+        "receta": "ensalada-atun-papa"
+      }
+    },
+    {
+      "dia": 12,
+      "almuerzo": {
+        "receta": "polenta-espinaca-queso"
+      },
+      "cena": {
+        "del_freezer": "albondigas-salsa"
+      }
+    },
+    {
+      "dia": 13,
+      "almuerzo": {
+        "receta": "zapallitos-rellenos"
+      },
+      "cena": {
+        "receta": "berenjenas-parmesana"
+      }
+    },
+    {
+      "dia": 14,
+      "almuerzo": {
+        "receta": "milanesas-pollo-horno",
+        "porciones": 8
+      },
+      "cena": {
+        "receta": "guiso-lentejas",
+        "porciones": 8
+      },
+      "postre_cena": "postre-chocolate-maicena"
+    },
+    {
+      "dia": 15,
+      "almuerzo": {
+        "sobra_de": "milanesas-pollo-horno"
+      },
+      "cena": {
+        "sobra_de": "guiso-lentejas"
+      }
+    },
+    {
+      "dia": 16,
+      "almuerzo": {
+        "receta": "fajitas-carne"
+      },
+      "cena": {
+        "receta": "crema-calabaza-garbanzos"
+      }
+    },
+    {
+      "dia": 17,
+      "almuerzo": {
+        "receta": "fideos-atun-tomate"
+      },
+      "cena": {
+        "receta": "pollo-limon-sarten"
+      }
+    },
+    {
+      "dia": 18,
+      "almuerzo": {
+        "receta": "ensalada-porotos-choclo"
+      },
+      "cena": {
+        "receta": "hamburguesas-caseras"
+      }
+    },
+    {
+      "dia": 19,
+      "almuerzo": {
+        "receta": "merluza-criolla"
+      },
+      "cena": {
+        "receta": "pizza-pan-arabe"
+      }
+    },
+    {
+      "dia": 20,
+      "almuerzo": {
+        "receta": "cerdo-manzanas-pure"
+      },
+      "cena": {
+        "receta": "medallones-garbanzos"
+      }
+    },
+    {
+      "dia": 21,
+      "almuerzo": {
+        "receta": "pollo-horno-batatas"
+      },
+      "cena": {
+        "receta": "tarta-pollo-choclo"
+      },
+      "postre_cena": "crumble-manzana",
+      "nota_batch": "🍗 Cocinar base de pollo hoy (1,3 kg crudos)"
+    },
+    {
+      "dia": 22,
+      "almuerzo": {
+        "receta": "minestrone-porotos"
+      },
+      "cena": {
+        "receta": "quesadillas-pollo-choclo"
+      }
+    },
+    {
+      "dia": 23,
+      "almuerzo": {
+        "receta": "fideos-pollo-brocoli"
+      },
+      "cena": {
+        "receta": "merluza-crocante-horno"
+      }
+    },
+    {
+      "dia": 24,
+      "almuerzo": {
+        "receta": "fideos-bolognesa-lentejas"
+      },
+      "cena": {
+        "receta": "cerdo-agridulce"
+      },
+      "nota_batch": "🍚 Cocinar arroz de más hoy"
+    },
+    {
+      "dia": 25,
+      "almuerzo": {
+        "receta": "arroz-salteado-huevo"
+      },
+      "cena": {
+        "receta": "chili-carne-porotos",
+        "porciones": 8
+      }
+    },
+    {
+      "dia": 26,
+      "almuerzo": {
+        "sobra_de": "chili-carne-porotos"
+      },
+      "cena": {
+        "receta": "wraps-hummus"
+      }
+    },
+    {
+      "dia": 27,
+      "almuerzo": {
+        "receta": "tortilla-papa-espinaca"
+      },
+      "cena": {
+        "receta": "ensalada-atun-papa"
+      }
+    },
+    {
+      "dia": 28,
+      "almuerzo": {
+        "receta": "pastel-papa-calabaza"
+      },
+      "cena": {
+        "receta": "polenta-espinaca-queso"
+      },
+      "postre_cena": "helado-banana"
+    },
+    {
+      "dia": 29,
+      "almuerzo": {
+        "receta": "huevos-salsa-criolla"
+      },
+      "cena": {
+        "receta": "fajitas-carne"
+      }
+    },
+    {
+      "dia": 30,
+      "almuerzo": {
+        "receta": "crema-calabaza-garbanzos"
+      },
+      "cena": {
+        "receta": "merluza-criolla"
+      }
+    }
+  ]
+}

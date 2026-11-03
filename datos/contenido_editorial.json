@@ -1,0 +1,377 @@
+{
+  "introduccion": {
+    "antes_de_empezar": {
+      "titulo": "Antes de empezar",
+      "parrafos": [
+        "Si todos los días aparece la misma pregunta —«¿qué cocino hoy?»—, el problema no es que te falten ideas. Muchas veces falta un sistema sencillo que te ayude a decidir con anticipación, aprovechar lo que ya tenés y resolver los días en los que no hay tiempo ni energía.",
+        "Esta guía no busca que cocines perfecto, que prepares todo el domingo ni que sigas una dieta rígida. Busca que tengas un plan flexible: una base para organizarte y permiso para cambiarla cuando la vida real se imponga.",
+        "Vas a encontrar un método simple, 32 platos principales y 13 opciones prácticas y rendidoras de desayunos, colaciones, viandas y postres, un calendario coordinado de 30 días, listas de compras exactas por sector, pautas de seguridad familiar y un pack descargable de seis plantillas imprimibles en PDF listos para usar en el hogar."
+      ],
+      "claves": [
+        "Elegí el nivel de organización que puedas sostener, no el ideal inalcanzable.",
+        "Usá el menú como guía, no como una obligación: podés intercambiar comidas libremente.",
+        "Adaptá porciones y condimentos al apetito y gustos reales de tu hogar."
+      ],
+      "consejo_fruta": "Fruta de estación: 1 por persona por día, como postre o colación fresca."
+    },
+    "como_usar_guia": {
+      "titulo": "Cómo usar esta guía según tu tiempo",
+      "descripcion": "Primero, leé el método y hacé un inventario rápido de heladera, freezer y alacena. Después elegí las comidas de los próximos siete días y armá la lista de compras a partir de ellas. No hace falta preparar todas las recetas ni comprar todo de una sola vez.",
+      "niveles": [
+        {
+          "tiempo": "Si tenés 10 minutos",
+          "accion": "Elegí tres cenas del calendario y anotá lo que te falta en la lista de compras."
+        },
+        {
+          "tiempo": "Si tenés 20 minutos",
+          "accion": "Revisá tu inventario en casa, armá el menú de los próximos 7 días y separá la lista por rubros."
+        },
+        {
+          "tiempo": "Si tenés 1 hora",
+          "accion": "Lavá y picá verduras para la semana y dejá una base cocida (pollo o arroz) para resolver dos comidas en minutos."
+        }
+      ]
+    },
+    "circulo_improvisacion": {
+      "titulo": "El círculo de la improvisación",
+      "bajada": "Cuando decidís a último momento, es más probable que repitas siempre los mismos dos platos, compres de más por las dudas o termines pidiendo delivery por puro agotamiento.",
+      "trampas": [
+        "Esperar inspiración a las ocho de la noche sin nada descongelado.",
+        "Hacer compras grandes sin revisar qué alimentos se vencen primero en casa.",
+        "Elegir recetas complicadas con ingredientes caros de un solo uso.",
+        "Cocinar una preparación sin pensar si puede rendir para el almuerzo del día siguiente.",
+        "Abandonar el plan semanal por completo si un día tuviste que cambiar la cena."
+      ]
+    }
+  },
+  "metodo": {
+    "los_15_minutos": {
+      "titulo": "El método de los 15 minutos semanales",
+      "descripcion": "Una vez por semana, reservá 15 minutos fijos para mirar tu agenda, revisar la alacena y elegir las comidas clave.",
+      "pasos": [
+        {
+          "paso": 1,
+          "titulo": "Mirá tu semana",
+          "detalle": "Identificá qué días salís tarde, qué días hay actividades extra y cuándo vas a necesitar comidas rápidas."
+        },
+        {
+          "paso": 2,
+          "titulo": "Revisá lo perecedero",
+          "detalle": "Fijate qué verduras, lácteos o carnes deben consumirse primero para no tirar nada."
+        },
+        {
+          "paso": 3,
+          "titulo": "Elegí 4 a 7 comidas",
+          "detalle": "Seleccioná las preparaciones del calendario que mejor encajen con tus horarios."
+        },
+        {
+          "paso": 4,
+          "titulo": "Repetí estratégicamente",
+          "detalle": "Aprovechá la cocción doble (almuerzos con sobras planificadas) para cocinar menos veces."
+        },
+        {
+          "paso": 5,
+          "titulo": "Bajá la lista por sectores",
+          "detalle": "Comprá agrupado por rubros del súper para no dar vueltas ni tentarte con extras."
+        },
+        {
+          "paso": 6,
+          "titulo": "Tené 2 comodines de emergencia",
+          "detalle": "Dejá siempre en freezer o alacena alimentos comodín para cuando el plan cambie."
+        }
+      ]
+    },
+    "formula_plato": {
+      "titulo": "La fórmula de un plato práctico y balanceado",
+      "bajada": "Sin fórmulas matemáticas rígidas ni prohibiciones: una estructura simple que garantiza saciedad y nutrientes a toda la familia.",
+      "componentes": [
+        {
+          "nombre": "Verduras variadas",
+          "rol": "Frescas, salteadas, al vapor o en ensalada para sumar fibra, color y volumen."
+        },
+        {
+          "nombre": "Fuente de proteína",
+          "rol": "Pollo, carne, pescado, huevos, legumbres o quesos para saciedad duradera."
+        },
+        {
+          "nombre": "Aporte de energía",
+          "rol": "Arroz, papas, fideos, batatas, polenta o pan integral adaptado a las porciones de cada comensal."
+        }
+      ]
+    },
+    "compras_estrategicas": {
+      "titulo": "Criterios inteligentes antes de ir al súper",
+      "consejos": [
+        "Revisá heladera, alacena y freezer con la lista en mano antes de salir.",
+        "Comprá en función de tu menú real, no de ofertas aisladas que después se pudren.",
+        "Si un ingrediente fresco está fuera de estación o con sobreprecio, reemplazalo por uno equivalente (zapallitos por zucchini, carne por legumbres o pollo).",
+        "Mantené carnes crudas separadas en la base del carrito y de las bolsas para evitar contaminación."
+      ]
+    },
+    "conservacion_segura": {
+      "titulo": "Pautas generales de seguridad alimentaria y conservación",
+      "puntos": [
+        {
+          "titulo": "Regla de las 2 horas",
+          "texto": "Nunca dejes comida cocida a temperatura ambiente por más de 2 horas (1 hora en días calurosos). Enfrialos y llevalos a la heladera sin demora."
+        },
+        {
+          "titulo": "Sobras seguras (máximo 3 días)",
+          "texto": "Guardá las sobras en recipientes herméticos limpios. Consumilas dentro de los 3 días y recalentalas una sola vez a fuego vivo hasta que humeen en el centro."
+        },
+        {
+          "titulo": "Cuidado especial con arroz y pasta",
+          "texto": "El arroz y la pasta cocidos desarrollan bacterias rápidamente si quedan tibios. Enfrialos extendidos en una fuente y llevalos a la heladera de inmediato."
+        },
+        {
+          "titulo": "Temperaturas internas de seguridad",
+          "texto": "Si tenés termómetro de cocina: pollo y aves 74 °C en el centro; carne picada y cerdo (cortes magros y bondiola) 71 °C en el centro; pescado 63 °C. La carne picada y el cerdo no deben tener partes rosadas."
+        },
+        {
+          "titulo": "Descongelamiento seguro",
+          "texto": "Descongelá siempre bajando la porción a la heladera con 24 horas de anticipación o en microondas justo antes de cocinar; nunca sobre la mesada a temperatura ambiente."
+        }
+      ]
+    },
+    "seguridad_chicos": {
+      "titulo": "Seguridad con chicos: prevención de atragantamiento y pautas clave",
+      "bajada": "La forma y textura de los alimentos son fundamentales para prevenir accidentes en la mesa familiar.",
+      "menores_4_anos": {
+        "rango": "Menores de 4 años (mayor riesgo de atragantamiento)",
+        "pautas": [
+          "Alimentos esféricos o cilíndricos: uvas, tomates cherry, frutillas y salchichas deben cortarse siempre a lo largo en cuartos, nunca en rodajas redondas.",
+          "Vegetales y frutas duras crudas: zanahoria, manzana, remolacha y pepino deben ofrecerse siempre rallados finos o cocidos hasta que estén tiernos.",
+          "Legumbres crocantes: evitar garbanzos tostados crujientes (riesgo de atragantamiento tipo confite); ofrecerlos pisados con tenedor o en hummus.",
+          "Chauchas y fideos largos: cortarlos siempre en trozos pequeños.",
+          "Frutos secos enteros y semillas: no ofrecer enteros; utilizar únicamente molidos, procesados o como manteca de maní suave.",
+          "Miel: NUNCA ofrecer antes de los 12 meses de vida por riesgo estricto de botulismo del lactante.",
+          "Pescados y carnes: desmenuzar bien y revisar cuidadosamente con los dedos para descartar espinas o cartílagos."
+        ]
+      },
+      "de_4_a_8_anos": {
+        "rango": "De 4 a 8 años (transición supervisada)",
+        "pautas": [
+          "Transición gradual hacia bocados enteros siempre bajo supervisión adulta.",
+          "Mantener el corte longitudinal en alimentos cilíndricos resbaladizos.",
+          "Hábito en la mesa: enseñar a comer sentados, masticar con calma y sin pantallas ni distracciones activas."
+        ]
+      },
+      "aviso_pediatra": "Estas recomendaciones son pautas generales de prevención doméstica. Ante cualquier duda sobre el desarrollo madurativo de tu hijo/a, consultá siempre con su pediatra o profesional de salud."
+    }
+  },
+  "estrategias": {
+    "comidas_emergencia": {
+      "titulo": "Comidas de emergencia: Plan A, B y C",
+      "planes": [
+        {
+          "plan": "Plan A · Hay tiempo normal",
+          "detalle": "Seguí la receta planificada en el calendario mensual con sus guarniciones."
+        },
+        {
+          "plan": "Plan B · Hay poco tiempo (10–15 min)",
+          "detalle": "Omelette de queso y tomate con ensalada rápida, tostadas con huevo revuelto o fideos con atún y oliva (Atún: consumo moderado en embarazo y en chicos pequeños; ante dudas, consultá con tu profesional de salud)."
+        },
+        {
+          "plan": "Plan C · Agotamiento total",
+          "detalle": "Legumbres en lata bien enjuagadas con choclo, tomate y queso fresco; sándwich nutritivo completo o tarta del freezer."
+        }
+      ]
+    },
+    "aprovechamiento": {
+      "titulo": "Una base, tres comidas diferentes",
+      "pautas": [
+        "Pollo cocido extra: sirve para tacos/quesadillas el lunes, tarta de pollo el martes y salteado con fideos el miércoles.",
+        "Arroz cocido refrigerado: ensalada fresca al mediodía, salteado oriental a la noche o base de hamburguesas vegetarianas.",
+        "Verduras asadas de más: guarnición caliente el primer día, relleno de tarta o tortilla el segundo y crema licuada con caldo el tercero."
+      ]
+    },
+    "compromiso": {
+      "titulo": "Tu compromiso de 30 días",
+      "texto": "Durante este mes no buscás ser un chef perfecto ni vivir planificando. Buscás probar un sistema que te ahorre energía mental. Si un día tu horario cambia o pedís comida, no fallaste: el sistema es flexible y al día siguiente retomás con tranquilidad."
+    }
+  },
+  "porciones": {
+    "titulo": "Cómo ajustar las porciones según tu hogar",
+    "bajada": "Todas las recetas de este libro están calculadas para 4 porciones estándar de adulto. Usá esta guía orientativa para adaptar cantidades fácilmente.",
+    "tabla_factores": [
+      {
+        "personas": "2 personas",
+        "factor": "0,5 (la mitad)",
+        "ejemplo_carne": "300 a 350 g",
+        "arroz_seco": "125 g",
+        "pasta_seca": "175 g"
+      },
+      {
+        "personas": "4 personas (base)",
+        "factor": "1 (receta tal cual)",
+        "ejemplo_carne": "600 a 700 g",
+        "arroz_seco": "250 g",
+        "pasta_seca": "350 g"
+      },
+      {
+        "personas": "6 personas",
+        "factor": "1,5 (sumar 50%)",
+        "ejemplo_carne": "900 a 1050 g",
+        "arroz_seco": "375 g",
+        "pasta_seca": "525 g"
+      }
+    ],
+    "referencia_edades": [
+      {
+        "rango": "Menores de 4 años",
+        "porcion": "Aproximadamente 1/3 a 1/2 de la porción de un adulto, según su apetito y etapa de crecimiento."
+      },
+      {
+        "rango": "De 4 a 8 años",
+        "porcion": "Aproximadamente 1/2 a 2/3 de la porción de un adulto."
+      }
+    ],
+    "pautas_clave": [
+      {
+        "titulo": "Tiempos de cocción",
+        "texto": "Cocinar el doble de cantidad no duplica el tiempo de horno ni de hervor. En horno, fijate que la comida no quede amontonada; en sartén, cociná en dos tandas si la superficie no alcanza."
+      },
+      {
+        "titulo": "Sal y condimentos",
+        "texto": "No dupliques la sal de forma directa. Aumentá en menor proporción y probá siempre hacia el final de la cocción."
+      },
+      {
+        "titulo": "Fuentes y ollas",
+        "texto": "Si aumentás cantidades, usá una fuente más amplia para que los alimentos doren y no se hiervan en sus propios jugos."
+      }
+    ],
+    "aclaracion": "Estas cantidades son orientativas y de referencia general. Cada persona y familia tiene requerimientos individuales según su nivel de actividad y etapa vital."
+  },
+  "seguridad_infantil": {
+    "titulo": "Seguridad alimentaria con chicos en casa",
+    "bajada": "Pautas generales de prevención y adaptación de texturas para que toda la familia coma tranquila y segura.",
+    "alimentos_riesgo": [
+      {
+        "alimento": "Uvas y tomates cherry",
+        "adaptacion": "Cortar siempre a lo largo (en cuartos longitudinales), nunca servir enteros ni redondos."
+      },
+      {
+        "alimento": "Zanahoria y manzana crudas",
+        "adaptacion": "Rallar fino o cocinar al vapor/horno hasta que estén tiernas. Evitar bastones duros enteros."
+      },
+      {
+        "alimento": "Frutos secos enteros",
+        "adaptacion": "Evitar frutos secos enteros en menores de 4 años. Ofrecer molidos, en harina o en pastas untables finas."
+      },
+      {
+        "alimento": "Legumbres crocantes o duras",
+        "adaptacion": "Aplastar ligeramente los garbanzos o porotos con un tenedor antes de servir a los más chicos."
+      }
+    ],
+    "regla_miel": {
+      "titulo": "Miel: solo a partir del año de vida",
+      "texto": "Por recomendación pediátrica universal, nunca debe ofrecerse miel a bebés menores de 1 año (ni sola ni en preparaciones horneadas) por riesgo de botulismo del lactante."
+    },
+    "aclaracion": "Esta guía ofrece sugerencias prácticas generales y no constituye prescripción médica. Ante dudas sobre el desarrollo o alimentación de tu hijo/a, consultá siempre con su pediatra."
+  },
+  "con_chicos_en_casa": {
+    "titulo": "Con chicos en casa: comer en paz y sin peleas",
+    "bajada": "Estrategias cotidianas para acompañar etapas de selectividad alimentaria sin frustración ni platos a pedido.",
+    "consejos": [
+      {
+        "numero": 1,
+        "titulo": "El plato desarmado",
+        "texto": "Muchos chicos rechazan preparaciones mezcladas. Serví los componentes separados (el arroz, el pollo y la verdura en sectores distintos) para que vean qué comen."
+      },
+      {
+        "numero": 2,
+        "titulo": "Exposición repetida sin presión",
+        "texto": "Un alimento nuevo puede requerir entre 10 y 15 exposiciones antes de ser aceptado. Que esté en el plato o en la mesa ya es un paso adelante."
+      },
+      {
+        "numero": 3,
+        "titulo": "No obligar a limpiar el plato",
+        "texto": "Los chicos regulan su apetito de forma natural. Respetar sus señales de saciedad previene conflictos y construye una relación sana con la comida."
+      },
+      {
+        "numero": 4,
+        "titulo": "El postre no es premio ni castigo",
+        "texto": "Evitá frases como «si comés la verdura, tenés postre». Darle al postre un valor de recompensa sobrevalora el azúcar y desvaloriza el plato principal."
+      },
+      {
+        "numero": 5,
+        "titulo": "Involucrarlos en la cocina",
+        "texto": "Lavar hojas, mezclar un relleno o desgranar una mazorca les da protagonismo y curiosidad por probar lo que ayudaron a preparar."
+      },
+      {
+        "numero": 6,
+        "titulo": "Porciones pequeñas para no abrumar",
+        "texto": "Serví cantidades modestas en su plato: siempre pueden repetir si tienen ganas. Un plato muy lleno genera rechazo de entrada."
+      },
+      {
+        "numero": 7,
+        "titulo": "Siempre un alimento seguro en la mesa",
+        "texto": "Cuando prepares algo nuevo, asegurate de que haya en la mesa al menos un componente que ya conozcan y les guste (pan, arroz, queso o fruta)."
+      }
+    ]
+  },
+  "semana_extras": {
+    "titulo": "Semana Tipo: Ciclo de 3 Días (A, B, C)",
+    "bajada": "Un esquema rotativo de 3 días para resolver desayunos, meriendas, colaciones escolares y viandas sin aburrirse ni improvisar.",
+    "aclaracion_uso": "Repetí el ciclo durante la semana o mezclá libremente cualquier opción de cada columna.",
+    "regla_postres": "Fruta de estación 4 o 5 días por semana; postre dulce casero 2 o 3 veces por semana (helado de banana, manzanas asadas, postre de chocolate o crumble).",
+    "ciclo": [
+      {
+        "dia": "Día A",
+        "desayuno": "Tostadas con queso untable, tomate y orégano",
+        "colacion": "Palitos de verdura con hummus o queso untable",
+        "vianda": "Vianda: pan árabe relleno de queso, hojas verdes y zanahoria"
+      },
+      {
+        "dia": "Día B",
+        "desayuno": "Avena de la noche con yogur y fruta",
+        "colacion": "Bolitas de avena, banana y cacao",
+        "vianda": "Vianda: bowl de pollo, arroz y choclo (usá la base cocida de los días marcados; si no tenés, reemplazá por la vianda de lentejas)"
+      },
+      {
+        "dia": "Día C",
+        "desayuno": "Panqueques de banana y avena",
+        "colacion": "Licuado de banana, leche y avena",
+        "vianda": "Vianda: ensalada de lentejas, zanahoria, queso y tomate"
+      }
+    ]
+  },
+  "como_usar_imprimibles": {
+    "titulo": "Cómo usar tu Pack de Imprimibles",
+    "bajada": "Seis plantillas prácticas en PDF para colgar en la heladera y compartir la carga mental del hogar.",
+    "herramientas": [
+      {
+        "nombre": "1. Planificador semanal de comidas",
+        "uso": "Pegalo en la puerta de la heladera. Escribí el domingo las comidas de la semana para que toda la familia sepa qué se come cada día."
+      },
+      {
+        "nombre": "2. Inventario de heladera, freezer y alacena",
+        "uso": "Completalo en 10 minutos antes de armar tu menú. Te ayuda a rotar alimentos y evitar compras duplicadas."
+      },
+      {
+        "nombre": "3. Mis 5 comidas de emergencia",
+        "uso": "Tu salvavidas para días agotadores. Anotá tus 5 platos comodín que se resuelven con lo que siempre tenés en casa."
+      },
+      {
+        "nombre": "4. Lista de compras en blanco por sector",
+        "uso": "Llevá la lista dividida por góndola al súper o verdulería para comprar rápido y sin dar vueltas."
+      },
+      {
+        "nombre": "5. Tu compromiso familiar de 30 días",
+        "uso": "Una hoja para firmar y poner fecha a tu objetivo de simplificar la cocina diaria."
+      },
+      {
+        "nombre": "6. Calendario de 30 días para la heladera",
+        "uso": "Pegalo en la puerta de la heladera para tener la vista completa del mes con almuerzo, cena y recordatorios clave de batch cooking."
+      }
+    ]
+  },
+  "quien_hizo_esta_guia": {
+    "titulo": "Quién hizo esta guía",
+    "texto": "Esta guía fue creada por el equipo de Saso Digital con una sola meta: devolverte tiempo y darte tranquilidad en la cocina familiar. Recetas sencillas, ingredientes que conseguís en cualquier esquina y un método práctico para que comer rico todos los días no sea una carga mental."
+  },
+  "pauta_sodio": {
+    "titulo": "Atención al sodio en la cocina cotidiana",
+    "texto": "Ingredientes como caldos en cubito, salsa de soja comercial, embutidos y conservas concentran sodio. Para equilibrar: elegí versiones «sin sal agregada» o bajas en sodio cuando estén disponibles, enjuagá siempre las legumbres enlatadas en un colador (reduce hasta un 40% del sodio) y realzá sabores con hierbas frescas, limón, ajo y especias."
+  }
+}

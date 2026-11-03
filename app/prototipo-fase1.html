@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#D96B43">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Compañero 30">
+  <title>Compañero de 30 días · 30 días sin preguntarte qué cocinar · Saso Digital</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icono-apple.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icono-192.png">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- CABECERA FIJA CON ACCESO RÁPIDO A PORCIONES Y MODO CHICOS -->
+  <header class="top-header no-print">
+    <div class="top-header-inner">
+      <div>
+        <span class="brand-badge">Saso Digital · Edición 2026</span>
+        <h1 class="brand-title">Compañero de 30 días</h1>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="portions-pill-btn" onclick="togglePanelPorciones()" aria-label="Configurar porciones del hogar">
+          <span>🍽️</span>
+          <span id="txtResumenPorcionesHeader">4 personas (base)</span>
+          <span style="font-size:0.7rem;">▾</span>
+        </button>
+
+        <button type="button" id="btnModoChicos" class="kids-toggle-btn" onclick="toggleModoChicosGlobal()" aria-label="Activar o desactivar Modo con chicos">
+          <span id="txtModoChicos">👶 Con chicos</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+
+    <!-- PANEL DESPLEGABLE DE PORCIONES DEL HOGAR -->
+    <section id="panelPorcionesGlobal" class="control-panel no-print" style="display:none;" aria-label="Calculadora de porciones">
+      <div class="control-panel-title">
+        <span>🍽️ Porciones de tu hogar (afecta recetas y compras)</span>
+        <button type="button" class="btn-secondary" style="min-height:32px; padding:4px 10px; font-size:0.78rem;" onclick="togglePanelPorciones()">
+          Cerrar ✕
+        </button>
+      </div>
+
+      <div class="quick-portions">
+        <button type="button" class="portion-preset-btn" id="preset2" onclick="aplicarPresetPorciones(2)">
+          2 personas<br><small style="font-weight:400; font-size:0.75rem;">Mitad (0,5x)</small>
+        </button>
+        <button type="button" class="portion-preset-btn active" id="preset4" onclick="aplicarPresetPorciones(4)">
+          4 personas<br><small style="font-weight:400; font-size:0.75rem;">Receta base (1x)</small>
+        </button>
+        <button type="button" class="portion-preset-btn" id="preset6" onclick="aplicarPresetPorciones(6)">
+          6 personas<br><small style="font-weight:400; font-size:0.75rem;">+50 % (1,5x)</small>
+        </button>
+      </div>
+
+      <div class="family-counters">
+        <div class="counter-box">
+          <div class="counter-label">
+            Adultos
+            <small>1 porción c/u</small>
+          </div>
+          <div class="counter-controls">
+            <button type="button" class="counter-step-btn" onclick="ajustarIntegranteHogar('adultos', -1)">−</button>
+            <span class="counter-value" id="valAdultos">4</span>
+            <button type="button" class="counter-step-btn" onclick="ajustarIntegranteHogar('adultos', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="counter-box">
+          <div class="counter-label">
+            Chicos (&lt; 4 años)
+            <small>1/3 a 1/2 porción</small>
+          </div>
+          <div class="counter-controls">
+            <button type="button" class="counter-step-btn" onclick="ajustarIntegranteHogar('menores4', -1)">−</button>
+            <span class="counter-value" id="valMenores4">0</span>
+            <button type="button" class="counter-step-btn" onclick="ajustarIntegranteHogar('menores4', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="counter-box">
+          <div class="counter-label">
+            Chicos (4 a 8 años)
+            <small>1/2 a 2/3 porción</small>
+          </div>
+          <div class="counter-controls">
+            <button type="button" class="counter-step-btn" onclick="ajustarIntegranteHogar('chicos4a8', -1)">−</button>
+            <span class="counter-value" id="valChicos4a8">0</span>
+            <button type="button" class="counter-step-btn" onclick="ajustarIntegranteHogar('chicos4a8', 1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portion-disclaimer">
+        💡 <strong>Cantidades orientativas:</strong> Se redondean a medidas caseras prácticas (ej. 1/2 cebolla) y actualizan automáticamente tus listas de compras semanales.
+      </div>
+    </section>
+
+    <!-- CONTENEDOR DINÁMICO DE LAS 10 FUNCIONES -->
+    <div id="mainContenidoApp"></div>
+
+    <!-- PIE DE PÁGINA CON AVISO PROFESIONAL -->
+    <footer class="legal-footer no-print">
+      <strong>Compañero de 30 días · Saso Digital</strong><br>
+      <span id="textoAvisoLegal"></span><br>
+      <button type="button" class="btn-tengo" style="margin-top:8px; font-size:0.75rem;" onclick="bloquearAccesoParaPruebas()">
+        🔒 Probar pantalla de bienvenida (re-bloquear con código)
+      </button>
+    </footer>
+
+  </main>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR MÓVIL (5 PESTAÑAS) -->
+  <nav class="bottom-nav no-print" aria-label="Navegación principal">
+    <div class="bottom-nav-inner">
+      <button type="button" class="bottom-tab active" id="tabBottom_hoy" onclick="irAPantalla('hoy')">
+        <span class="bottom-tab-icon">🏠</span>
+        <span>Hoy</span>
+      </button>
+      <button type="button" class="bottom-tab" id="tabBottom_calendario" onclick="irAPantalla('calendario')">
+        <span class="bottom-tab-icon">📅</span>
+        <span>Calendario</span>
+      </button>
+      <button type="button" class="bottom-tab" id="tabBottom_compras" onclick="irAPantalla('compras')">
+        <span class="bottom-tab-icon">🛒</span>
+        <span>Compras</span>
+      </button>
+      <button type="button" class="bottom-tab" id="tabBottom_mis_recetas" onclick="irAPantalla('mis_recetas')">
+        <span class="bottom-tab-icon">📒</span>
+        <span>Mis recetas</span>
+      </button>
+      <button type="button" class="bottom-tab" id="tabBottom_extras" onclick="irAPantalla('extras')">
+        <span class="bottom-tab-icon">🥐</span>
+        <span>Extras</span>
+      </button>
+      <button type="button" class="bottom-tab" id="tabBottom_seguridad" onclick="irAPantalla('seguridad')">
+        <span class="bottom-tab-icon">🛡️</span>
+        <span>Seguridad</span>
+      </button>
+    </div>
+  </nav>
+
+  <script src="datos.js"></script>
+  <script src="logica.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

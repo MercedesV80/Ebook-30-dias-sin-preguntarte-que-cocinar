@@ -1,0 +1,26 @@
+{
+  "name": "Compañero de 30 días · Saso Digital",
+  "short_name": "Compañero 30",
+  "description": "App interactiva que acompaña el ebook 30 días sin preguntarte qué cocinar · Saso Digital",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#D96B43",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

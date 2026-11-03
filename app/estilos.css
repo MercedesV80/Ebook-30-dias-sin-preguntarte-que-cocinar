@@ -1,0 +1,1430 @@
+/* ==========================================================================
+   COMPAÑERO DE 30 DÍAS · SASO DIGITAL (EDICIÓN 2026)
+   Hoja de estilos Mobile-First (360px a escritorio) · Identidad Visual Ebook
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('fuentes/Fraunces.ttf') format('truetype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('fuentes/NunitoSans.ttf') format('truetype');
+  font-weight: 400 600 700 800;
+  font-display: swap;
+}
+
+:root {
+  --bg-cream: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F4EFE6;
+  --text-dark: #2B2A27;
+  --text-muted: #5C5852;
+  --border-soft: #E6DEC8;
+  --accent-terracotta: #D96B43;
+  --accent-terracotta-dark: #B8522D;
+  --accent-terracotta-light: #F7EBE4;
+  --accent-sage: #5B8266;
+  --accent-sage-dark: #43644C;
+  --accent-sage-light: #EBF2EC;
+  --accent-mustard: #D99B38;
+  --accent-mustard-light: #FDF5E6;
+  --alert-orange-bg: #FFF7ED;
+  --alert-orange-border: #F97316;
+  --alert-orange-text: #9A3412;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 4px 18px rgba(43, 42, 39, 0.06);
+  --shadow-card: 0 2px 10px rgba(43, 42, 39, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.5;
+  padding-bottom: 92px; /* Espacio para la barra inferior móvil */
+}
+
+h1, h2, h3, .serif-title {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* Contenedor principal centrado */
+.app-shell {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 14px 14px 32px;
+}
+
+/* Cabecera editorial cálida */
+.top-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 2px 8px rgba(43, 42, 39, 0.04);
+}
+
+.top-header-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-terracotta);
+  display: block;
+}
+
+.brand-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/* Interruptor Modo con Chicos en cabecera */
+.kids-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.kids-toggle-btn.active {
+  background: var(--accent-sage-light);
+  border-color: var(--accent-sage);
+  color: var(--accent-sage-dark);
+}
+
+/* Tarjeta de control de porciones */
+.control-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.control-panel-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--accent-sage-dark);
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quick-portions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.portion-preset-btn {
+  min-height: 46px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: all 0.15s ease;
+}
+
+.portion-preset-btn.active {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  color: #FFFFFF;
+}
+
+.family-counters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-soft);
+}
+
+@media (max-width: 420px) {
+  .family-counters {
+    grid-template-columns: 1fr;
+  }
+}
+
+.counter-box {
+  background: var(--bg-cream);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.counter-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.counter-label small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.counter-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.counter-step-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+  background: #FFFFFF;
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-value {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.portion-disclaimer {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+
+/* Selector horizontal de las 5 recetas de muestra (Fase 1) */
+.sample-selector {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sample-tab-btn {
+  min-height: 46px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-card);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.sample-tab-btn.active {
+  background: var(--accent-sage);
+  border-color: var(--accent-sage);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   FICHA DE RECETA (DISEÑO EDITORIAL INTERACTIVO)
+   ========================================================================== */
+.recipe-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 20px;
+}
+
+.recipe-hero {
+  position: relative;
+  background: #F6F1E9;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.recipe-hero img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.recipe-hero-placeholder {
+  padding: 24px 20px;
+  background: linear-gradient(135deg, var(--accent-sage-light), var(--accent-mustard-light));
+  text-align: center;
+}
+
+.recipe-body {
+  padding: 18px 16px 22px;
+}
+
+.recipe-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tag-chip {
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tag-chip.protein {
+  background: var(--accent-terracotta-light);
+  color: var(--accent-terracotta-dark);
+}
+
+.tag-chip.kids {
+  background: var(--accent-sage-light);
+  color: var(--accent-sage-dark);
+}
+
+.tag-chip.batch {
+  background: var(--accent-mustard-light);
+  color: #85581A;
+  border: 1px solid #F3D299;
+}
+
+.recipe-title {
+  font-size: 1.45rem;
+  margin: 0 0 12px 0;
+  color: var(--text-dark);
+}
+
+/* Píldoras de tiempo, dificultad y kcal */
+.recipe-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.meta-pill {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.meta-pill-label {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.meta-pill-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* Botón interactivo cuando una receta usa la Base de pollo */
+.base-link-banner {
+  background: var(--accent-mustard-light);
+  border: 1.5px solid #F0C987;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.base-link-btn {
+  min-height: 40px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Bloques de Ingredientes y Preparación */
+.section-subtitle {
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-sage-dark);
+  border-bottom: 2px solid var(--border-soft);
+  padding-bottom: 6px;
+  margin: 18px 0 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.ing-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 8px;
+  border-bottom: 1px dotted var(--border-soft);
+  cursor: pointer;
+  min-height: 46px;
+  border-radius: 6px;
+  transition: background 0.12s ease;
+}
+
+.ing-item:hover {
+  background: var(--bg-cream);
+}
+
+.ing-item.checked {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+.ing-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.ing-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--accent-sage);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.ing-item.checked .ing-checkbox {
+  background: var(--accent-sage);
+}
+
+.ing-qty {
+  font-weight: 800;
+  color: var(--accent-terracotta-dark);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Pasos de preparación */
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  counter-reset: step-counter;
+}
+
+.step-item {
+  position: relative;
+  padding: 12px 12px 12px 48px;
+  background: var(--bg-cream);
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.step-num {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Recuadros editoriales de seguridad, señales y variantes (igual que el ebook) */
+.info-box {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  border-left: 4px solid #CCC;
+}
+
+.info-box strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.info-box.cue-brown {
+  background: #FAF4ED;
+  border-left-color: #D97706;
+  color: #78350F;
+}
+
+.info-box.cue-green {
+  background: #F0FDF4;
+  border-left-color: #22C55E;
+  color: #166534;
+}
+
+.info-box.cue-orange {
+  background: var(--alert-orange-bg);
+  border-left-color: var(--alert-orange-border);
+  color: var(--alert-orange-text);
+}
+
+.info-box.cue-fridge {
+  background: #F8FAFC;
+  border-left-color: #64748B;
+  color: #334155;
+}
+
+.variants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+@media (max-width: 480px) {
+  .variants-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.variant-card {
+  background: var(--bg-cream);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.94rem;
+}
+
+.variant-card.kids-highlighted {
+  background: var(--accent-sage-light);
+  border-color: var(--accent-sage);
+  box-shadow: 0 0 0 2px rgba(91, 130, 102, 0.18);
+}
+
+.variant-card strong {
+  display: block;
+  color: var(--accent-terracotta-dark);
+  margin-bottom: 4px;
+}
+
+.variant-card.kids-highlighted strong {
+  color: var(--accent-sage-dark);
+}
+
+/* Botón principal de acción (Hecho) */
+.done-meal-btn {
+  width: 100%;
+  min-height: 52px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--accent-sage);
+  background: #FFFFFF;
+  color: var(--accent-sage-dark);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  transition: all 0.18s ease;
+}
+
+.done-meal-btn.completed {
+  background: var(--accent-sage);
+  color: #FFFFFF;
+}
+
+/* Pie legal y nutricional permanente */
+.legal-footer {
+  margin-top: 24px;
+  padding: 14px 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+
+
+/* ==========================================================================
+   ESTILOS FASE 2: NAVEGACIÓN, CAMBIO DE COMIDA, DEPENDENCIAS Y COMPRAS
+   ========================================================================== */
+
+.phase-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.phase-nav-btn {
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-card);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 8px 6px;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.phase-nav-btn.active {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(217, 107, 67, 0.25);
+}
+
+/* Tarjetas de turnos del día (Almuerzo / Cena) */
+.day-slot-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.day-slot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.slot-moment-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-terracotta-dark);
+}
+
+.slot-recipe-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  color: var(--text-dark);
+}
+
+.slot-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.slot-actions-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary, .btn-primary-sm {
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-cream);
+  color: var(--text-dark);
+}
+
+.btn-primary-sm {
+  border: 1.5px solid var(--accent-sage);
+  background: var(--accent-sage);
+  color: #FFFFFF;
+}
+
+/* Panel desplegable de Cambio de Comida y Dependencias */
+.swap-panel {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 2px dashed var(--border-soft);
+}
+
+.dependency-alert {
+  background: #FFFBEB;
+  border: 1.5px solid #F59E0B;
+  border-left: 5px solid #D97706;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  font-size: 0.92rem;
+  color: #78350F;
+}
+
+.dependency-alert strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.alt-option-card {
+  background: var(--bg-cream);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.alt-option-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.alt-option-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   LISTA DE COMPRAS POR SEMANA Y POR SECTOR
+   ========================================================================== */
+.week-selector-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.shop-actions-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.shop-sector-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.shop-sector-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent-terracotta-dark);
+  border-bottom: 2px solid var(--border-soft);
+  padding-bottom: 6px;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 6px;
+  border-bottom: 1px dotted var(--border-soft);
+  min-height: 48px;
+}
+
+.shop-row:last-child {
+  border-bottom: none;
+}
+
+.shop-row.status-tengo {
+  opacity: 0.5;
+  background: #F8FAFC;
+  border-radius: 6px;
+}
+
+.shop-row.status-comprado {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+.shop-item-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.shop-item-text strong {
+  color: var(--text-dark);
+  font-size: 0.98rem;
+}
+
+.shop-item-qty {
+  color: var(--accent-terracotta-dark);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.shop-item-detail {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.btn-tengo {
+  min-height: 36px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-cream);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-tengo.active {
+  background: var(--accent-sage-light);
+  border-color: var(--accent-sage);
+  color: var(--accent-sage-dark);
+}
+
+/* Vista de impresión limpia para la lista de compras */
+@media print {
+  .top-header, .phase-nav, .control-panel, .week-selector-bar, .shop-actions-bar, .btn-tengo, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+    padding: 0 !important;
+  }
+  .app-shell {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .shop-sector-card {
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #CCC !important;
+    margin-bottom: 10px !important;
+  }
+  .shop-row.status-tengo {
+    display: none !important; /* No imprimir lo que ya tiene en casa */
+  }
+}
+
+
+/* ==========================================================================
+   ESTILOS FASE 3: BARRA INFERIOR MÓVIL, HOY, PROGRESO, HOY NO PUEDO,
+   CALENDARIO SEMANAL, CICLO EXTRAS Y SEGURIDAD ALIMENTARIA
+   ========================================================================== */
+
+/* Barra de navegación inferior fija (Mobile-First, cómoda con 1 mano) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 1.5px solid var(--border-soft);
+  box-shadow: 0 -4px 16px rgba(43, 42, 39, 0.08);
+  z-index: 50;
+  padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px));
+}
+
+.bottom-nav-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 480px) {
+  .ing-form-row {
+    grid-template-columns: 1fr 1fr !important;
+    background: var(--bg-cream);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+  }
+  .ing-form-row input:first-child {
+    grid-column: span 2;
+  }
+}
+
+.bottom-tab {
+  min-height: 54px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px 2px;
+  transition: all 0.15s ease;
+}
+
+.bottom-tab .tab-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.bottom-tab.active {
+  background: var(--accent-terracotta-light);
+  color: var(--accent-terracotta-dark);
+  font-weight: 800;
+}
+
+/* Botón rescate "¡Hoy no puedo!" */
+.sos-banner-btn {
+  width: 100%;
+  min-height: 54px;
+  background: linear-gradient(135deg, #D96B43, #C2532B);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(217, 107, 67, 0.28);
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.sos-banner-btn small {
+  display: block;
+  font-weight: 600;
+  font-size: 0.82rem;
+  opacity: 0.92;
+}
+
+/* Tarjeta de Progreso Sin Culpa */
+.progress-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 12px;
+  background: var(--bg-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-sage), #74A182);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-encourage {
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.date-config-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-soft);
+  font-size: 0.85rem;
+}
+
+.date-input {
+  min-height: 40px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-cream);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Tarjetas visuales de comida en pantalla HOY */
+.today-meal-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.today-meal-card.meal-done {
+  border-color: var(--accent-sage);
+  background: #FAFCFA;
+}
+
+.today-meal-top {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  align-items: center;
+}
+
+@media (max-width: 400px) {
+  .today-meal-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.today-meal-thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-soft);
+  flex-shrink: 0;
+}
+
+@media (max-width: 400px) {
+  .today-meal-thumb {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+  }
+}
+
+.today-meal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+@media (max-width: 420px) {
+  .today-meal-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .today-meal-actions .btn-hecho-slot {
+    grid-column: span 2;
+  }
+}
+
+.btn-hecho-slot {
+  min-height: 46px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--accent-sage);
+  background: #FFFFFF;
+  color: var(--accent-sage-dark);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-hecho-slot.done {
+  background: var(--accent-sage);
+  color: #FFFFFF;
+}
+
+/* Chips de ingredientes para "Hoy no puedo" */
+.pantry-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.pantry-chip-btn {
+  min-height: 42px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-soft);
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.pantry-chip-btn.selected {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  color: #FFFFFF;
+}
+
+/* Tabla / Tarjetas de Ciclo de Extras (A, B, C) */
+.cycle-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.cycle-day-badge {
+  display: inline-block;
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.cycle-slot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--border-soft);
+}
+
+.cycle-slot-row:last-child {
+  border-bottom: none;
+}
+
+/* Acordeones o tarjetas de Seguridad Alimentaria */
+.safety-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.safety-card h3 {
+  font-size: 1.15rem;
+  color: var(--accent-terracotta-dark);
+  margin: 0 0 8px 0;
+}
+
+.safety-rule-item {
+  background: var(--bg-cream);
+  border-left: 4px solid var(--accent-sage);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.safety-rule-item strong {
+  display: block;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+@media print {
+  .bottom-nav, .sos-banner-btn, .progress-card {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   PANTALLA DE ACCESO Y BIENVENIDA (GATE COCINA30 + PWA)
+   ========================================================================== */
+.access-gate-wrapper {
+  max-width: 480px;
+  margin: 20px auto 40px;
+  padding: 0 12px;
+}
+
+.access-gate-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.access-gate-thumb {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  margin: 0 auto 14px;
+  display: block;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-soft);
+}
+
+.access-gate-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  color: var(--accent-terracotta-dark);
+  margin: 6px 0 10px;
+}
+
+.access-gate-text {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.access-form-box {
+  background: var(--bg-cream);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.access-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--accent-terracotta);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+}
+
+.access-input:focus {
+  outline: none;
+  border-color: var(--accent-terracotta-dark);
+  box-shadow: 0 0 0 3px rgba(217, 107, 67, 0.2);
+}
+
+.btn-access-submit {
+  width: 100%;
+  min-height: 48px;
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-access-submit:hover {
+  background: var(--accent-terracotta-dark);
+}
+
+.access-error-msg {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-top: 10px;
+  display: none;
+}
+
+.pwa-helper-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--accent-sage);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-top: 18px;
+  text-align: left;
+}
+
+.pwa-helper-card h4 {
+  margin: 0 0 6px 0;
+  color: var(--accent-sage-dark);
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-pwa-install {
+  width: 100%;
+  min-height: 44px;
+  background: var(--accent-sage);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
