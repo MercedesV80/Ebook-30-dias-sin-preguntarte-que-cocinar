@@ -3,7 +3,7 @@
    Garantiza funcionamiento 100% sin conexión en celular
    ========================================================================== */
 
-const CACHE_NAME = "companero30-v1";
+const CACHE_NAME = "companero30-v4";
 
 const RECURSOS_OFFLINE = [
   "./",

@@ -1493,8 +1493,11 @@
   let deferredPrompt = null;
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("./sw.js").then(function (reg) {
-        console.log("Service Worker activo para modo offline:", reg.scope);
+      navigator.serviceWorker.register("./sw.js?v=3").then(function (reg) {
+        if (reg) {
+          reg.update();
+          console.log("Service Worker activo v3:", reg.scope);
+        }
       }).catch(function (err) {
         console.log("Fallo al registrar Service Worker:", err);
       });
@@ -1502,7 +1505,7 @@
   }
 
   window.addEventListener("beforeinstallprompt", function (e) {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     deferredPrompt = e;
     const btnInstalar = document.getElementById("btnInstalarPWA");
     if (btnInstalar) {
@@ -1523,13 +1526,42 @@
     }
   };
 
-  window.verificarCodigoAccesoUI = function (e) {
+  // Huella criptográfica SHA-256 del código de acceso.
+  // El código real NO queda escrito en texto plano en ninguna parte de la app.
+  const HASH_ACCESO_PERMITIDO = "40c084f81ae1f8786818417d87a0dd1b314cc8d8069c1b6046fa5d087c944e4d";
+
+  async function calcularSha256(texto) {
+    if (window.crypto && window.crypto.subtle && window.crypto.subtle.digest) {
+      const buffer = new TextEncoder().encode(texto);
+      const hashBuffer = await window.crypto.subtle.digest("SHA-256", buffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+    return "";
+  }
+
+  window.toggleVisibilidadPasswordUI = function () {
+    const inp = document.getElementById("inputCodigoAcceso");
+    const btn = document.getElementById("btnTogglePassword");
+    if (!inp) return;
+    if (inp.type === "password") {
+      inp.type = "text";
+      if (btn) btn.textContent = "🙈";
+    } else {
+      inp.type = "password";
+      if (btn) btn.textContent = "👁️";
+    }
+  };
+
+  window.verificarCodigoAccesoUI = async function (e) {
     if (e && e.preventDefault) e.preventDefault();
     const inp = document.getElementById("inputCodigoAcceso");
     const err = document.getElementById("msgErrorAcceso");
     if (!inp) return;
     const val = String(inp.value || "").trim().toUpperCase();
-    if (val === "COCINA30") {
+    const hashIngresado = await calcularSha256(val);
+
+    if (hashIngresado === HASH_ACCESO_PERMITIDO) {
       estado.accesoAutorizado = true;
       M.guardarEstado(estado);
       renderizarApp();
@@ -1537,16 +1569,10 @@
     } else {
       if (err) {
         err.style.display = "block";
+        err.textContent = "Revisá el código que te enviamos";
       }
       inp.focus();
     }
-  };
-
-  window.bloquearAccesoParaPruebas = function () {
-    estado.accesoAutorizado = false;
-    M.guardarEstado(estado);
-    renderizarApp();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   function renderizarPantallaAcceso() {
@@ -1557,31 +1583,57 @@
           <span class="brand-badge">Saso Digital · Edición 2026</span>
           <h2 class="access-gate-title">Compañero de 30 días</h2>
           <p class="access-gate-text">
-            ¡Hola! Te damos la bienvenida a tu aplicación web interactiva para acompañar el ebook <strong>«30 días sin preguntarte qué cocinar»</strong>.<br><br>
-            Para habilitar tu acceso en este dispositivo, por favor ingresá el código que te enviamos junto con tu compra:
+            Ingresá el código de acceso exclusivo que recibiste con tu ebook para desbloquear la app:
           </p>
 
           <form class="access-form-box" onsubmit="verificarCodigoAccesoUI(event)">
-            <label for="inputCodigoAcceso" style="font-weight:800; font-size:0.88rem; display:block; margin-bottom:6px; color:var(--text-dark);">
+            <label for="inputCodigoAcceso" class="access-label">
               🔑 Código de acceso:
             </label>
-            <input type="text" id="inputCodigoAcceso" class="access-input" placeholder="Ej: COCINA30" autofocus autocomplete="off" autocapitalize="characters">
-            <button type="submit" class="btn-access-submit">
-              <span>Ingresar a la app</span>
-              <span>→</span>
-            </button>
-            <div id="msgErrorAcceso" class="access-error-msg">
-              ⚠️ El código no coincide. Revisá que esté escrito en mayúsculas (ej: COCINA30) o consultanos si tenés dudas.
+
+            <div class="access-input-group">
+              <input 
+                type="password" 
+                id="inputCodigoAcceso" 
+                class="access-input" 
+                placeholder="Escribí tu código acá" 
+                autocomplete="off" 
+                autocapitalize="characters" 
+                autocorrect="off" 
+                spellcheck="false" 
+                required 
+                autofocus
+              >
+              <button 
+                type="button" 
+                id="btnTogglePassword" 
+                class="btn-toggle-eye" 
+                onclick="toggleVisibilidadPasswordUI()" 
+                aria-label="Ver u ocultar código"
+                title="Ver u ocultar código"
+              >
+                👁️
+              </button>
             </div>
-            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:10px; line-height:1.4;">
-              💡 Solo te lo pedimos la primera vez en cada celular o computadora. Tu progreso se guardará automáticamente en este dispositivo.
+
+            <button type="submit" class="btn-access-submit" id="btnEntrarAcceso">
+              <span>Entrar</span>
+              <span style="font-size: 1.2rem;">→</span>
+            </button>
+
+            <div id="msgErrorAcceso" class="access-error-msg">
+              Revisá el código que te enviamos
+            </div>
+
+            <div class="access-hint-text">
+              💡 Solo te lo pedimos la primera vez en cada dispositivo. Al entrar, no te lo volverá a pedir.
             </div>
           </form>
 
           <div class="pwa-helper-card">
             <h4>📱 Instalar en tu pantalla de inicio</h4>
             <p style="font-size:0.86rem; color:var(--text-muted); margin:0 0 8px 0; line-height:1.4;">
-              Podés usar esta app como una aplicación móvil real, con icono propio en tu celular y funcionando 100% sin conexión a internet.
+              Podés usar esta app como una aplicación móvil real, con ícono propio en tu celular y funcionando 100% sin conexión a internet.
             </p>
             <button type="button" id="btnInstalarPWA" class="btn-pwa-install" onclick="instalarPWAUI()">
               📲 Instalar app en mi celular
@@ -1589,7 +1641,7 @@
           </div>
 
           <div style="margin-top:20px; font-size:0.78rem; color:var(--text-muted); line-height:1.4;">
-            🔒 <strong>Acceso privado:</strong> Esta aplicación no es indexada por buscadores (noindex) y guarda tus datos únicamente en la memoria de tu dispositivo para proteger tu privacidad.
+            🔒 <strong>Acceso privado:</strong> Esta aplicación no es indexada por buscadores y guarda tus datos únicamente en la memoria de tu dispositivo para proteger tu privacidad.
           </div>
         </div>
       </div>
@@ -1635,7 +1687,6 @@
     }
 
     // Panel desplegable de porciones
-    const panelPorc = document.getElementById("panelPorcionesGlobal");
     if (panelPorc) {
       panelPorc.style.display = ui.mostrarPanelPorciones ? "block" : "none";
       document.getElementById("valAdultos").textContent = estado.porciones.adultos;
@@ -1659,7 +1710,6 @@
     const calActivo = M.obtenerCalendarioActivo(D, estado);
     const recetasMap = mapaRecetas();
     const factorHogar = M.obtenerFactorHogar(estado.porciones);
-    const mainCont = document.getElementById("mainContenidoApp");
 
     if (ui.pantalla === "hoy") {
       mainCont.innerHTML = renderizarPantallaHoy(calActivo, recetasMap, factorHogar);
@@ -1680,12 +1730,18 @@
     }
   }
 
-  // Inicialización al cargar
-  document.addEventListener("DOMContentLoaded", function () {
+  // Inicialización al cargar (compatible con carga diferida o instantánea)
+  function inicializarApp() {
     const avisoEl = document.getElementById("textoAvisoLegal");
     if (avisoEl) avisoEl.textContent = D.meta.aviso_profesional;
     renderizarApp();
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", inicializarApp);
+  } else {
+    inicializarApp();
+  }
 
 })();
 

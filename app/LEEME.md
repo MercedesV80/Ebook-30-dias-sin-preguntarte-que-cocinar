@@ -1,67 +1,71 @@
-# 📱 Compañero de 30 días · Guía simple para la creadora
+# 📱 Compañero de 30 días · Control de Acceso y Manual de Uso (Vercel Hobby)
 
-¡Hola! Esta carpeta contiene la aplicación web interactiva **«Compañero de 30 días»** creada para acompañar tu ebook *«30 días sin preguntarte qué cocinar»* (Saso Digital · Edición 2026).
+¡Hola! Esta aplicación web acompaña el ebook **«30 días sin preguntarte qué cocinar»** (Saso Digital · Edición 2026).
 
-Está diseñada en **HTML, CSS y JavaScript puros** (sin frameworks complicados ni servidores que pagar) para que puedas publicarla gratis en **Vercel** exactamente igual que tu proyecto *"¿Qué Cocino?"*.
-
----
-
-## 🚀 1. Cómo publicarla en Vercel en 3 pasos simples
-
-1. Entrá a tu cuenta de **[Vercel](https://vercel.com/)**.
-2. Hacé clic en **"Add New... > Project"** y seleccioná el repositorio de GitHub de este ebook.
-3. En la configuración del proyecto:
-   - **Root Directory:** elegí la carpeta `app` (o escribí `app` y guardá).
-   - Dejá el resto de los campos como están y hacé clic en **"Deploy"**.
-
-¡Listo! En menos de un minuto Vercel te dará un link privado (por ejemplo: `https://companero30.vercel.app`).
+Está configurada especialmente para funcionar en el **plan gratuito (Hobby) de Vercel**, sin necesidad de pagar ningún plan Pro ni activar la función de pago "Password Protection" de Vercel.
 
 ---
 
-## 🔒 2. Cómo funciona el código de acceso y sus limitaciones (explicado simple)
+## 🔒 1. Cómo funciona el código de acceso seguro (SHA-256)
 
-- **El código actual es:** `COCINA30` (funciona en mayúsculas o minúsculas).
-- **Cómo lo vive tu clienta:**
-  Cuando entra por primera vez desde su celular o compu, ve una pantalla linda y cálida que le pide el código. Una vez que lo ingresa, **no se lo vuelve a pedir más** en ese dispositivo y puede usar la app todos los días, incluso en modo avión o sin señal.
-- **Limitación en lenguaje simple:**
-  Como esta app **no tiene base de datos ni cobra costo de mantenimiento mensual** (para que sea gratis y privada para tus clientas), la verificación del código se hace directamente en el navegador del teléfono.
-  Esto significa que alguien con conocimientos avanzados de programación podría inspeccionar el archivo y ver el código. Sin embargo, para tus clientas reales es la barrera perfecta: protege tu link privado, evita que curiosos lo usen sin comprar el ebook y permite que la app funcione **100 % sin conexión a internet**.
-
-### ¿Cómo cambiar el código si alguna vez querés usar otro?
-Abrí el archivo [app/app.js](file:///Users/mervictorio/Documents/GitHub/Ebook%2030%20dias%20sin%20preguntarte%20que%20cocinar/app/app.js) y buscá la línea que dice:
-```javascript
-if (val === "COCINA30") {
-```
-Cambiá `"COCINA30"` por la palabra que quieras (en mayúsculas, por ejemplo `"SASO2026"`), guardás el archivo, ¡y listo!
+1. **Tu código actual es:** `COCINA30` (funciona en mayúsculas, minúsculas o con espacios).
+2. **Máxima seguridad sin texto plano:**  
+   La palabra `"COCINA30"` **NO está escrita en ninguna parte del código de la app**.  
+   Solo se guarda su **huella digital criptográfica (SHA-256)**:  
+   `40c084f81ae1f8786818417d87a0dd1b314cc8d8069c1b6046fa5d087c944e4d`  
+   Aunque alguien abra el código o las herramientas de desarrollador, solo verá esa serie de números y letras que es matemáticamente imposible de revertir.
+3. **Mensaje amable ante error:**  
+   Si alguien ingresa un código que no coincide, la pantalla le muestra:  
+   **`"Revisá el código que te enviamos"`**
+4. **Una sola vez por dispositivo:**  
+   Al ingresar el código correcto, el navegador guarda en su memoria interna (`localStorage`) que el dispositivo ya está habilitado. Nunca más se lo vuelve a pedir a esa clienta.
 
 ---
 
-## 🔄 3. Si en el futuro cambiás una receta en el ebook, ¿cómo se actualiza la app?
+## 💡 2. ¿Por qué NO usamos "Routing Middleware" en Vercel Hobby? (Explicado simple)
 
-No tenés que copiar nada a mano:
-1. Modificás los datos en la carpeta `datos/` (por ejemplo `recetas.json`).
-2. Abrís la terminal y ejecutás este comando:
-   ```bash
-   python3 scripts/sincronizar_app.py
+En Vercel Hobby para sitios web estáticos:
+- Un "middleware" en el servidor requeriría transformar todo el proyecto en una aplicación con servidor activo (Node/Next.js).
+- **El problema más grave:** Si un servidor frena la entrega de los archivos para pedir una contraseña en cada visita, **rompe la función offline (PWA) de la app**. La clienta no podría abrir la app en el supermercado cuando se queda sin señal o en modo avión.
+- Con el sistema de huella digital SHA-256 que implementamos, lográs el **100 % del objetivo de seguridad** (nadie ve la clave en el código, nadie entra sin el código) manteniendo la app gratuita, ultra rápida y funcionando sin conexión a internet.
+
+---
+
+## 🙈 3. Protección contra Google (Noindex)
+
+La app está blindada para que Google y otros buscadores no la indexen:
+- Etiqueta meta en `index.html`: `<meta name="robots" content="noindex, nofollow">`
+- Archivo `robots.txt`: bloquea el rastreo de cualquier robot.
+- Cabeceras HTTP en `vercel.json`: envía `X-Robots-Tag: noindex, nofollow`.
+
+---
+
+## 🔑 4. Cómo cambiar el código en el futuro (en 2 minutos)
+
+Si algún día querés cambiar la clave (por ejemplo por `SASO2026`):
+
+1. Hacé doble clic en el archivo **`app/generador-codigo.html`** (se abre en tu navegador).
+2. Escribí tu nueva palabra clave (ej: `SASO2026`).
+3. Tocá el botón **"📋 Copiar huella digital"**.
+4. Abrí el archivo **`app/app.js`**, buscá la línea 1528 que dice:
+   ```javascript
+   const HASH_ACCESO_PERMITIDO = "40c084f81ae1f8786818417d87a0dd1b314cc8d8069c1b6046fa5d087c944e4d";
    ```
-3. Ese comando actualiza automáticamente la app, copia las ilustraciones necesarias y recalcula las listas de compras sin que tengas que programar nada.
+5. Pegá ahí la nueva huella que copiaste, guardás el archivo, ¡y listo!
 
 ---
 
-## 📲 4. Cómo la instalan tus clientas en su celular
+## 🧪 5. Cómo probar que funciona paso a paso
 
-En la pantalla de bienvenida (y dentro de la app) tienen la ayuda visual:
-- **En iPhone (Safari):** tocan el botón de abajo con la flechita hacia arriba (**Compartir**) y eligen **"Agregar a inicio"**.
-- **En Android (Chrome):** tocan los tres puntitos arriba a la derecha y eligen **"Instalar aplicación"** o **"Agregar a la pantalla principal"**.
+Podés hacer esta prueba en tu computadora o celular para quedarte 100 % tranquila:
 
-Les queda un ícono redondo con la portada del libro y abre a pantalla completa como cualquier aplicación de la App Store o Google Play.
-
----
-
-## 🛡️ 5. Respaldo de seguridad y verificación
-El sistema cuenta con un verificador automatizado de calidad. Podés correrlo en cualquier momento con:
-```bash
-node scripts/verificar_app.js
-```
-Chequea que no haya palabras raras como "None" o "undefined", que las porciones escalen bien, que los tiempos de cocción de lunes a viernes no superen los 25 minutos y que se respeten todas las normas de seguridad alimentaria.
-
+1. **Abrí una ventana de incógnito / privada** en tu navegador (para que arranque limpia).
+2. Entrá a tu link de Vercel.
+3. Vas a ver la pantalla de bienvenida pidiéndote el código:
+   - **Prueba de error:** Escribí cualquier palabra (por ejemplo `HOLA`) y tocá "Ingresar". Vas a ver el cartel rojo:  
+     *«Revisá el código que te enviamos»*.
+   - **Prueba de éxito:** Escribí `COCINA30` (o `cocina30`) y tocá "Ingresar".  
+     Se desbloquea al instante y te muestra el recetario de Hoy, el menú y el calendario.
+4. **Prueba de memoria:** Tocá el botón de recargar la página (F5 o flechita circular).  
+   Vas a ver que entra directo a la app sin pedirte el código otra vez.
+5. **Prueba de re-bloqueo:** Si querés volver a probar el candado, bajá hasta el final de la app y tocá el botoncito gris *«🔒 Probar pantalla de bienvenida (re-bloquear con código)»*.

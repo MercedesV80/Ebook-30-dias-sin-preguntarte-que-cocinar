@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Generador de Claves Seguras · Saso Digital</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #FAF7F2;
+      color: #2B2A27;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 16px;
+    }
+    .card {
+      background: #FFFFFF;
+      max-width: 520px;
+      width: 100%;
+      padding: 28px 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border: 1px solid #E8E2D8;
+    }
+    h1 {
+      font-size: 1.35rem;
+      margin: 0 0 8px 0;
+      color: #9C4325;
+    }
+    p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.5;
+      margin: 0 0 18px 0;
+    }
+    label {
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 2px solid #D96B43;
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+    .result-box {
+      background: #F4EFE6;
+      padding: 14px;
+      border-radius: 8px;
+      margin-top: 14px;
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 0.85rem;
+      border: 1px solid #D9CFC1;
+    }
+    button {
+      background: #D96B43;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      width: 100%;
+    }
+    button:hover {
+      background: #9C4325;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🔑 Generador de Clave Segura (SHA-256)</h1>
+    <p>Escribí el código que quieras darle a tus clientas. Esta herramienta calcula su huella digital segura (hash) para que la pegues en <code>app.js</code> sin que la palabra real quede visible en el código.</p>
+
+    <label for="codigoInput">Escribí tu nuevo código:</label>
+    <input type="text" id="codigoInput" value="COCINA30" placeholder="Ej: COCINA30" oninput="generarHash()">
+
+    <label>Huella digital (Hash SHA-256) generada:</label>
+    <div class="result-box" id="resultadoHash"></div>
+
+    <button type="button" onclick="copiarHash()">📋 Copiar huella digital</button>
+
+    <div style="font-size:0.8rem; color:#888; margin-top:14px; line-height:1.4;">
+      👉 Pegá este código en la línea <code>HASH_ACCESO_PERMITIDO</code> del archivo <code>app/app.js</code>.
+    </div>
+  </div>
+
+  <script>
+    async function sha256(cadena) {
+      const buffer = new TextEncoder().encode(cadena);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    async function generarHash() {
+      const texto = document.getElementById("codigoInput").value.trim().toUpperCase();
+      const hash = await sha256(texto);
+      document.getElementById("resultadoHash").textContent = hash;
+    }
+
+    function copiarHash() {
+      const hash = document.getElementById("resultadoHash").textContent;
+      navigator.clipboard.writeText(hash).then(() => {
+        alert("¡Huella copiada al portapapeles!");
+      });
+    }
+
+    generarHash();
+  </script>
+
+</body>
+</html>
+
